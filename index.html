@@ -19,9 +19,10 @@
       <a href="#hero" class="nav-link">Home</a>
       <a href="#about" class="nav-link">About</a>
       <a href="#experience" class="nav-link">Experience</a>
-      <a href="#education" class="nav-link">Education</a>
-      <a href="#certifications" class="nav-link">Certifications</a>
+      <a href="#projects" class="nav-link">Projects</a>
       <a href="#skills" class="nav-link">Skills</a>
+      <a href="#certifications" class="nav-link">Certifications</a>
+      <a href="#education" class="nav-link">Education</a>
       <a href="#contact" class="nav-link">Contact</a>
     </nav>
   </header>
@@ -34,7 +35,7 @@
         <h1 class="hero-name">Raghav Gurung</h1>
         <p class="hero-headline">Digital Solutions Architect</p>
         <p class="hero-tags">Power BI · Python · Azure · Automation · API · Salesforce · AI/ML · Web Scraping</p>
-        <p class="hero-location">Gurugram, Haryana, India</p>
+        <p class="hero-location">Delhi NCR, India</p>
         <div class="hero-cta">
           <a href="#experience" class="btn btn-primary">View experience</a>
           <a href="#contact" class="btn btn-secondary">Contact</a>
@@ -77,7 +78,7 @@
             <div class="job-header">
               <h3 class="job-title">AI Engineer</h3>
               <span class="job-company">ICG Medical</span>
-              <span class="job-meta">Apr 2023 – Oct 2024 · Gurugram, India</span>
+              <span class="job-meta">Apr 2023 – Oct 2024 · Delhi NCR, India</span>
             </div>
             <ul class="job-bullets">
               <li>Worked with product and operations to identify high‑value use cases for AI and automation in internal tools.</li>
@@ -96,7 +97,7 @@
             <div class="job-header">
               <h3 class="job-title">Data Analyst</h3>
               <span class="job-company">ICG Medical</span>
-              <span class="job-meta">Nov 2022 – Apr 2023 · Gurugram, India</span>
+              <span class="job-meta">Nov 2022 – Apr 2023 · Delhi NCR, India</span>
             </div>
             <ul class="job-bullets">
               <li>Designed and built 12+ analytics dashboards and reports (using Power BI and Python) for sales and finance leadership.</li>
@@ -110,7 +111,7 @@
             <div class="job-header">
               <h3 class="job-title">Manager – Onboarding</h3>
               <span class="job-company">Greenstaff Medical Canada</span>
-              <span class="job-meta">Jul 2022 – Nov 2022 · Gurugram, India (remote for Canada)</span>
+              <span class="job-meta">Jul 2022 – Nov 2022 · Delhi NCR, India (remote for Canada)</span>
             </div>
             <ul class="job-bullets">
               <li>Led design and execution of the onboarding process; architected automated systems to improve speed, consistency, and compliance.</li>
@@ -125,7 +126,7 @@
             <div class="job-header">
               <h3 class="job-title">Senior Onboarding Specialist</h3>
               <span class="job-company">Greenstaff Medical Canada</span>
-              <span class="job-meta">Mar 2021 – Jul 2022 · Gurugram, India (remote for Canada)</span>
+              <span class="job-meta">Mar 2021 – Jul 2022 · Delhi NCR, India (remote for Canada)</span>
             </div>
             <ul class="job-bullets">
               <li>Drove healthcare staffing operations: ad hoc, contract, per diem, and permanent placements.</li>
@@ -166,28 +167,75 @@
         </div>
       </section>
 
-      <section class="section education" id="education">
-        <h2 class="section-title">Education</h2>
-        <div class="edu-block">
-          <h3 class="edu-degree">Bachelors, Applied Physics</h3>
-          <p class="edu-school">Delhi University</p>
-          <p class="edu-meta">2009 – 2012 · Delhi, India</p>
+      <section class="section projects" id="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects-list">
+          <article class="project-item">
+            <h3 class="project-title">Intelligent Compliance Document Automation</h3>
+            <p class="project-subtitle">AI-driven extraction of key compliance data from forms and documents.</p>
+            <ul class="project-bullets">
+              <li>Built a tool that reads compliance forms and supporting documents and extracts key fields and risk indicators for downstream checks.</li>
+              <li>Designed a document-processing pipeline combining OCR, layout analysis, and NLP to identify entities such as certifications, expiry dates, and high-risk flags.</li>
+              <li>Implemented validation and rules logic so incomplete or inconsistent submissions are automatically flagged for review.</li>
+              <li>Integrated the tool with internal compliance systems via APIs, creating a single source of truth for document status and risk.</li>
+              <li>Reduced manual document review time by ~50–60% while improving consistency and auditability.</li>
+            </ul>
+            <p class="project-tech"><strong>Tech:</strong> Azure AI (OCR, Text Analytics), Python, REST APIs, document stores.</p>
+          </article>
+
+          <article class="project-item">
+            <h3 class="project-title">AI Meeting &amp; Interview Recorder → Audit Docs</h3>
+            <p class="project-subtitle">Turns voice recordings from staff interviews and meetings into structured, audit-ready documentation.</p>
+            <ul class="project-bullets">
+              <li>Created a tool that ingests meeting and interview recordings, converts speech to text, and structures content into summaries, actions, risks, and follow-ups.</li>
+              <li>Used speech-to-text services to transcribe multi-speaker audio and handle accents and background noise with reliable accuracy.</li>
+              <li>Designed NLP processing to extract key topics, sentiment, and named entities, and to highlight potential compliance or HR risks.</li>
+              <li>Auto-generated audit-ready documents from transcripts using standardized templates for interview notes and meeting minutes.</li>
+              <li>Built a text-analysis dashboard so HR and management can search across interviews, filter by topic or risk level, and track recurring themes.</li>
+            </ul>
+            <p class="project-tech"><strong>Tech:</strong> Azure Speech, Text Analytics / NLP, Python, dashboards.</p>
+          </article>
+
+          <article class="project-item">
+            <h3 class="project-title">Enterprise Reporting &amp; Operations Portal</h3>
+            <p class="project-subtitle">Next.js + TypeScript web portal providing a single entry point to operational and compliance reporting.</p>
+            <ul class="project-bullets">
+              <li>Designed and built a Next.js and TypeScript portal that exposes 12+ operational and compliance reports in a unified experience.</li>
+              <li>Implemented server-side rendering and API routes to securely fetch and aggregate data from multiple internal systems.</li>
+              <li>Added radius-based search maps to visualise workforce availability and coverage by geography.</li>
+              <li>Built availability, shift-fill, and high-risk compliance candidate reports to support day-to-day staffing decisions.</li>
+              <li>Automated key business metrics such as ICB or contract performance updates so leadership always sees near real-time numbers.</li>
+            </ul>
+            <p class="project-tech"><strong>Tech:</strong> Next.js, TypeScript, REST APIs, mapping library, CI/CD.</p>
+          </article>
+
+          <article class="project-item">
+            <h3 class="project-title">Financial Analytics &amp; Margin Intelligence Suite</h3>
+            <p class="project-subtitle">Comprehensive financial reporting for P&amp;L, margins, debt ageing, and revenue.</p>
+            <ul class="project-bullets">
+              <li>Designed the end-to-end data model for finance reporting, including revenue, cost, and debt facts plus shared dimensions.</li>
+              <li>Built a suite of reports for Profit &amp; Loss analysis, contractor margin analysis, debt ageing, and revenue trends at client and region level.</li>
+              <li>Worked directly with finance and accounting to define metrics, variance rules, and drill-down paths that matched business reality.</li>
+              <li>Implemented calculations for effective margin, write-off risk, and debtor exposure, enabling data-driven pricing and credit-control decisions.</li>
+              <li>Automated data refresh and validation so reports stay in sync with source systems with minimal manual intervention.</li>
+            </ul>
+            <p class="project-tech"><strong>Tech:</strong> Data modelling, SQL, BI tooling, Python for ETL.</p>
+          </article>
+
+          <article class="project-item">
+            <h3 class="project-title">End-to-End Onboarding Automation for UK Healthcare Staff</h3>
+            <p class="project-subtitle">Automated onboarding journey and compliance checks for UK clinical staff.</p>
+            <ul class="project-bullets">
+              <li>Modelled the full onboarding pathway for UK clinical staff (right-to-work checks, DBS, occupational health, training, references, clinical sign-off) as a state machine with clear data and document requirements.</li>
+              <li>Built an orchestration layer that automatically advances candidates through stages when required documents are uploaded and validated.</li>
+              <li>Used document AI to extract key information from DBS certificates, training records, and occupational health forms and populate internal systems automatically.</li>
+              <li>Automated status notifications and checklists for candidates and recruiters, reducing email back-and-forth and missed compliance steps.</li>
+              <li>Provided compliance and HR teams with a dashboard of onboarding progress, blockers, and time-to-clearance by client, region, and staff type.</li>
+            </ul>
+            <p class="project-tech"><strong>Tech:</strong> Workflow engine, Python / Logic Apps, document AI, ATS/CRM integration, compliance dashboards.</p>
+          </article>
         </div>
       </section>
-
-      <section class="section certifications" id="certifications">
-        <h2 class="section-title">Certifications</h2>
-        <ul class="cert-list">
-          <li><a href="https://linkedin.com/learning/certificates/76a397e11a97400d18908287bee7517030006b6adf7ff2581715bd33b3d3071e" target="_blank" rel="noopener">Advanced Python</a> — LinkedIn (Aug 2022)</li>
-          <li><a href="https://linkedin.com/learning/certificates/cfac1a35a0f692415035faf145b7b77a3a5e9930fc2fe73489f71bd33dbfe5fb" target="_blank" rel="noopener">Advanced Core Python Code Challenges</a> — LinkedIn (Jul 2022)</li>
-          <li><a href="https://linkedin.com/learning/certificates/10213ab8d8f5179735034016bf44d48a07cc857979c809fe4f272315081c1bb8" target="_blank" rel="noopener">Advanced Microsoft Power BI</a> — LinkedIn (Jul 2022)</li>
-          <li><a href="https://linkedin.com/learning/certificates/f9c96d486419b60a48fbee3a0175ae5062cc3f8cfa3fc5309fba0876247e0d6c" target="_blank" rel="noopener">Advanced SQL for Application Development</a> — LinkedIn (Jul 2022)</li>
-          <li><a href="https://linkedin.com/learning/certificates/c495992b4486ea3747cd38965e8e1838770f8bb3b586c534b1897bc599446e7b" target="_blank" rel="noopener">Advanced SQL for Query Tuning and Performance Optimization</a> — LinkedIn (Jul 2022)</li>
-          <li><a href="https://linkedin.com/learning/certificates/55f14a7d09e892f10ad9e7b9a40612f9c82390f1fc07824534a65b465ea641ba" target="_blank" rel="noopener">SQL Server Machine Learning Services: Python</a> — LinkedIn (Jul 2022)</li>
-          <li><a href="https://linkedin.com/learning/certificates/7d55e90804715e6d3bb200f39313501b6475e1b3996bdfcfaa4bc0ad38683d2c" target="_blank" rel="noopener">Using Python for Automation</a> — LinkedIn (Jul 2022)</li>
-        </ul>
-      </section>
-
       <section class="section skills" id="skills">
         <h2 class="section-title">Skills</h2>
         <div class="skills-grid">
@@ -210,11 +258,37 @@
         </div>
       </section>
 
+      <section class="section certifications" id="certifications">
+        <h2 class="section-title">Certifications</h2>
+        <ul class="cert-list">
+          <li><a href="https://linkedin.com/learning/certificates/76a397e11a97400d18908287bee7517030006b6adf7ff2581715bd33b3d3071e" target="_blank" rel="noopener">Advanced Python</a> — LinkedIn (Aug 2022)</li>
+          <li><a href="https://linkedin.com/learning/certificates/cfac1a35a0f692415035faf145b7b77a3a5e9930fc2fe73489f71bd33dbfe5fb" target="_blank" rel="noopener">Advanced Core Python Code Challenges</a> — LinkedIn (Jul 2022)</li>
+          <li><a href="https://linkedin.com/learning/certificates/10213ab8d8f5179735034016bf44d48a07cc857979c809fe4f272315081c1bb8" target="_blank" rel="noopener">Advanced Microsoft Power BI</a> — LinkedIn (Jul 2022)</li>
+          <li><a href="https://linkedin.com/learning/certificates/f9c96d486419b60a48fbee3a0175ae5062cc3f8cfa3fc5309fba0876247e0d6c" target="_blank" rel="noopener">Advanced SQL for Application Development</a> — LinkedIn (Jul 2022)</li>
+          <li><a href="https://linkedin.com/learning/certificates/c495992b4486ea3747cd38965e8e1838770f8bb3b586c534b1897bc599446e7b" target="_blank" rel="noopener">Advanced SQL for Query Tuning and Performance Optimization</a> — LinkedIn (Jul 2022)</li>
+          <li><a href="https://linkedin.com/learning/certificates/55f14a7d09e892f10ad9e7b9a40612f9c82390f1fc07824534a65b465ea641ba" target="_blank" rel="noopener">SQL Server Machine Learning Services: Python</a> — LinkedIn (Jul 2022)</li>
+          <li><a href="https://linkedin.com/learning/certificates/7d55e90804715e6d3bb200f39313501b6475e1b3996bdfcfaa4bc0ad38683d2c" target="_blank" rel="noopener">Using Python for Automation</a> — LinkedIn (Jul 2022)</li>
+        </ul>
+      </section>
+
+      <section class="section education" id="education">
+        <h2 class="section-title">Education</h2>
+        <div class="edu-block">
+          <h3 class="edu-degree">Applied Physics (coursework)</h3>
+          <p class="edu-school">Delhi University</p>
+          <p class="edu-meta">2010 – 2012 · Delhi NCR, India</p>
+        </div>
+      </section>
+
       <section class="section contact" id="contact">
         <h2 class="section-title">Contact</h2>
         <div class="contact-links">
           <a href="mailto:raghav330@gmail.com" class="contact-link">raghav330@gmail.com</a>
-          <a href="https://www.linkedin.com/in/raghav-gurung-53818620a/" target="_blank" rel="noopener" class="contact-link">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/raghav-gurung-53818620a/" target="_blank" rel="noopener" class="contact-link contact-link-icon" aria-label="LinkedIn profile">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" class="icon">
+              <path d="M19 0H5C2.8 0 1 1.8 1 4v16c0 2.2 1.8 4 4 4h14c2.2 0 4-1.8 4-4V4c0-2.2-1.8-4-4-4ZM8.3 18.5H5.6V9.2h2.7v9.3ZM7 8.1c-.9 0-1.6-.7-1.6-1.6C5.4 5.7 6.1 5 7 5s1.6.7 1.6 1.6S7.9 8.1 7 8.1Zm12 10.4h-2.7v-4.9c0-1.2-.4-2-1.5-2-0.8 0-1.3.5-1.5 1-.1.2-.1.5-.1.8v5.1H10V9.2h2.6v1.3c.4-.6 1.1-1.5 2.8-1.5 2 0 3.5 1.3 3.5 4.1v5.4Z"/>
+            </svg>
+          </a>
           <button type="button" class="btn btn-primary" id="download-resume">Download resume (PDF)</button>
         </div>
       </section>
