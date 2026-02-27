@@ -314,6 +314,15 @@ body {
 }
 .site-footer p { margin: 0; }
 
+/* --- PDF export: light theme overrides while generating PDF --- */
+body.generating-pdf {
+  --bg: #ffffff;
+  --bg-elevated: #ffffff;
+  --text: #111111;
+  --text-muted: #555555;
+  --border: #dddddd;
+}
+
 /* --- Hide CTAs when generating PDF (html2pdf captures the same DOM) --- */
 body.generating-pdf .hero-cta,
 body.generating-pdf #download-resume {

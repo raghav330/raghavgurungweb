@@ -40,7 +40,8 @@
         margin: [12, 12, 12, 12],
         filename: 'Raghav_Gurung_Resume.pdf',
         image: { type: 'jpeg', quality: 0.95 },
-        html2canvas: { scale: 2, useCORS: true },
+        html2canvas: { scale: 2, useCORS: true, scrollY: 0 },
+        pagebreak: { mode: ['css', 'legacy'] },
         jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
       };
       html2pdf().set(opt).from(pdfContent).save().then(function () {
