@@ -101,6 +101,25 @@ body {
   color: var(--accent);
   margin: 0 0 0.5rem;
 }
+.hero-availability {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0 0 0.75rem;
+  padding: 0.25rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.02);
+}
+.status-dot {
+  width: 0.48rem;
+  height: 0.48rem;
+  border-radius: 50%;
+  background: #3fb950;
+  box-shadow: 0 0 0 2px rgba(63, 185, 80, 0.2);
+}
 .hero-tags {
   font-size: 0.95rem;
   color: var(--text-muted);
@@ -330,6 +349,11 @@ body {
   align-items: center;
   gap: 1rem;
 }
+.contact-consulting {
+  margin: 0 0 0.85rem;
+  color: var(--text-muted);
+  max-width: 44rem;
+}
 .contact-link {
   color: var(--accent);
   text-decoration: none;
@@ -365,21 +389,6 @@ body {
 }
 .site-footer p { margin: 0; }
 
-/* --- PDF export: light theme overrides while generating PDF --- */
-body.generating-pdf {
-  --bg: #ffffff;
-  --bg-elevated: #ffffff;
-  --text: #111111;
-  --text-muted: #555555;
-  --border: #dddddd;
-}
-
-/* --- Hide CTAs when generating PDF (html2pdf captures the same DOM) --- */
-body.generating-pdf .hero-cta,
-body.generating-pdf #download-resume {
-  display: none !important;
-}
-
 /* --- PDF export: hide nav/footer when printing or generating PDF --- */
 @media print {
   .site-header,
@@ -404,4 +413,134 @@ body.generating-pdf #download-resume {
   .hero-photo { width: 140px; height: 140px; }
   .skills-grid { grid-template-columns: 1fr; }
   .contact-links { flex-direction: column; align-items: flex-start; }
+}
+
+
+/* --- Dedicated resume PDF layout --- */
+.resume-print {
+  display: block;
+  width: 190mm;
+  min-height: 277mm;
+  padding: 10mm;
+  background: #ffffff;
+  color: #111111;
+  font-family: "Source Sans 3", Arial, sans-serif;
+  line-height: 1.35;
+}
+.resume-print-header {
+  border-bottom: 2px solid #222;
+  padding-bottom: 4mm;
+  margin-bottom: 5mm;
+}
+.resume-print-header h1 {
+  font-size: 22px;
+  line-height: 1.1;
+  margin: 0 0 2mm;
+}
+.resume-print-role {
+  margin: 0 0 1mm;
+  font-size: 12px;
+  font-weight: 600;
+}
+.resume-print-contact {
+  margin: 0;
+  font-size: 10px;
+  color: #444;
+}
+.resume-print-section {
+  margin-bottom: 4.5mm;
+}
+.resume-print-section h2 {
+  margin: 0 0 2mm;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #222;
+}
+.resume-print-section p {
+  margin: 0;
+  font-size: 10.5px;
+}
+.resume-item {
+  margin-bottom: 3.5mm;
+}
+.resume-item:last-child {
+  margin-bottom: 0;
+}
+.resume-item h3 {
+  margin: 0;
+  font-size: 11px;
+}
+.resume-item .meta {
+  margin: 0.6mm 0 1.4mm;
+  font-size: 9.5px;
+  color: #555;
+}
+.resume-item ul,
+.resume-print-section ul {
+  margin: 0;
+  padding-left: 4mm;
+}
+.resume-item li,
+.resume-print-section li {
+  margin-bottom: 0.8mm;
+  font-size: 10px;
+}
+.resume-item li:last-child,
+.resume-print-section li:last-child {
+  margin-bottom: 0;
+}
+.resume-print-section.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5mm;
+}
+
+/* --- Export clone: use current website data in clean PDF style --- */
+.resume-export {
+  --bg: #ffffff;
+  --bg-elevated: #ffffff;
+  --text: #111111;
+  --text-muted: #555555;
+  --accent: #1f1f1f;
+  --border: #dddddd;
+  width: 190mm;
+  background: #ffffff;
+  color: #111111;
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+.resume-export .hero {
+  min-height: auto;
+  padding: 0 0 0.9rem;
+  text-align: left;
+  display: block;
+}
+.resume-export .hero-content {
+  max-width: none;
+}
+.resume-export .hero-photo {
+  width: 88px;
+  height: 88px;
+  margin-bottom: 0.75rem;
+}
+.resume-export .hero-name {
+  font-size: 1.8rem;
+}
+.resume-export .hero-headline {
+  color: #222222;
+}
+.resume-export .section {
+  max-width: none;
+  padding: 0.9rem 0;
+  border-top: 1px solid #dddddd;
+}
+.resume-export .section-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.7rem;
+}
+.resume-export .job,
+.resume-export .project-item,
+.resume-export .skill-group {
+  break-inside: avoid;
 }

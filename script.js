@@ -28,30 +28,58 @@
     });
   });
 
-  // Download resume: generate PDF from page content (hero + all sections)
+  // Download resume: generate PDF from live website content
   var downloadBtn = document.getElementById('download-resume');
-  var pdfContent = document.getElementById('pdf-content');
-  if (downloadBtn && pdfContent && typeof html2pdf !== 'undefined') {
+  var pageResumeContent = document.getElementById('pdf-content');
+  if (downloadBtn && pageResumeContent && typeof html2pdf !== 'undefined') {
+    function resetDownloadState() {
+      downloadBtn.disabled = false;
+      downloadBtn.textContent = 'Download resume (PDF)';
+    }
+
+    function cleanupPrintNode(node) {
+      if (node && node.parentNode) {
+        node.parentNode.removeChild(node);
+      }
+    }
+
     downloadBtn.addEventListener('click', function () {
+      var pdfContent = pageResumeContent.cloneNode(true);
+      pdfContent.id = 'resume-print-generated';
+      pdfContent.classList.add('resume-export');
+
+      // Remove interactive controls from the export clone.
+      pdfContent.querySelectorAll('.hero-cta, #download-resume').forEach(function (node) {
+        node.remove();
+      });
+
+      var renderHost = document.createElement('div');
+      renderHost.id = 'resume-print-host';
+      renderHost.setAttribute('aria-hidden', 'true');
+      renderHost.style.position = 'absolute';
+      renderHost.style.left = '-99999px';
+      renderHost.style.top = '0';
+      renderHost.style.width = '210mm';
+      renderHost.style.overflow = 'hidden';
+      renderHost.appendChild(pdfContent);
+      document.body.appendChild(renderHost);
+
       downloadBtn.disabled = true;
       downloadBtn.textContent = 'Generating PDF…';
-      document.body.classList.add('generating-pdf');
       var opt = {
-        margin: [12, 12, 12, 12],
+        margin: [8, 8, 8, 8],
         filename: 'Raghav_Gurung_Resume.pdf',
-        image: { type: 'jpeg', quality: 0.95 },
-        html2canvas: { scale: 2, useCORS: true, scrollY: 0 },
+        image: { type: 'jpeg', quality: 0.9 },
+        html2canvas: { scale: 1.35, useCORS: true, scrollY: 0 },
         pagebreak: { mode: ['css', 'legacy'] },
         jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
       };
       html2pdf().set(opt).from(pdfContent).save().then(function () {
-        document.body.classList.remove('generating-pdf');
-        downloadBtn.disabled = false;
-        downloadBtn.textContent = 'Download resume (PDF)';
+        cleanupPrintNode(renderHost);
+        resetDownloadState();
       }).catch(function () {
-        document.body.classList.remove('generating-pdf');
-        downloadBtn.disabled = false;
-        downloadBtn.textContent = 'Download resume (PDF)';
+        cleanupPrintNode(renderHost);
+        resetDownloadState();
       });
     });
   }
